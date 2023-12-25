@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>POD subscription app</title>
+  </head>
+  <body>
+    <header class="header"
+            role="banner"
+    >
+      <section class="contents-wrapper">
+        <img
+          class="mobile-image"
+          src="images/mobile-bitmap.png"
+          alt="Person singing into a microphone"
+        />
+        <div
+          class="header__images"
+          role="complementary"
+        >
+          <a
+            class="header__logo"
+            href="index.html"
+            aria-label="Home"
+            >
+            <img src="images/pod_logo.svg" alt="POD logo" />
+          </a>
+          <div class="image-wrapper">
+            <img
+              class="header__image"
+              src="images/bitmap.jpg"
+              alt="Person singing into a microphone"
+            />
+          </div>
+          <img
+            class="header__dots"
+            src="images/dots.svg"
+            alt="Decorative green dots"
+          />
+          <section class="header__access-wraper"
+          >
+            <h2 class="access__title">
+              publish your podcasts <span>everywhere.</span>
+            </h2>
+            <p class="access__text">
+              Upload your audio to Pod with a single click. We’ll then
+              distribute your podcast to Spotify, Apple Podcasts, Google
+              Podcasts, Pocket Casts and more!
+            </p>
+            <div class="mobile-flipper">
+              <!-- for flipping columns in mobile -->
+              <form
+                class="access__input-wraper"
+                action="#home"
+                aria-label="Request Access Form">
+              >
+                <input
+                  class="access__email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                />
+                <button
+                  class="access__button"
+                  type="submit"
+                  aria-label="Request access to POD"
+                  >
+                  Request Access
+                </button>
+              </form>
+              <div
+                class="access__icons"
+                role="group"
+                aria-label="Supported Podcast Platforms">
+                >
+                <div class="mobile-icon-wraper">
+                  <img
+                    class="mobile-icon"
+                    src="images/spotify.svg"
+                    alt="Spotify icon"
+                  />
+                </div>
+                <div class="mobile-icon-wraper">
+                  <img
+                    class="mobile-icon"
+                    src="images/apple-podcast.svg"
+                    alt="Apple podcasts icon"
+                  />
+                </div>
+                <div class="mobile-icon-wraper">
+                  <img
+                    class="mobile-icon"
+                    src="images/google-podcast.svg"
+                    alt="Google podcasts icon"
+                  />
+                </div>
+                <div class="mobile-icon-wraper">
+                  <img
+                    class="mobile-icon"
+                    src="images/pocket-casts.svg"
+                    alt="Pocket casts icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </header>
+  </body>
+</html>
