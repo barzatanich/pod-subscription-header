@@ -6,199 +6,55 @@
   --lighter-gray: #c2cbe5;
 }
 
-/* CSS RESET RULES */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  line-height: 1;
-  font-weight: 400; /* added to the reset rules */
-  font-family: 'Chivo', sans-serif; /* added to the reset rules */
-  box-sizing: border-box; /* added to the reset rules */
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* Reset rules end here */
-
-/*  css styles start here
-    *notice some styles added to the body reset settings
-*/
-
-.header {
-  background-color: var(--almost-black);
-  width: 100%;
-  min-height: 100vh;
+  font-weight: 400;
+  font-family: 'Chivo', sans-serif;
 }
 
 .contents-wrapper {
-  padding: 130px 0 130px 165px;
+  display: flex;
+  flex-direction: column;
+  padding: 130px 0 130px 164px;
+  background-color: var(--almost-black);
+  min-height: 100vh;
+  height: 100%;
 }
 
-.mobile-image {
-  display: none;
-}
-
-.header__images {
+.header__contents {
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 102px;
   justify-content: space-between;
-  align-items: start;
+  flex-grow: 1;
 }
 
 .header__logo {
   transform: translateY(-50%);
-  z-index: 3;
 }
 
 .image-wrapper {
+  position: absolute;
   width: 70%;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .header__image {
   width: 100%;
-  max-height: 70vh;
+  height: 100%;
   object-fit: cover;
   object-position: top;
 }
 
-.header__dots {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  transform: translateY(50%);
-  z-index: 3;
-}
-
-.header__access-wraper {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.header__access-wrapper {
   width: 60%;
-  max-width: 800px;
+  max-width: 860px;
   padding-top: 88px;
   padding-right: 58px;
   background-color: var(--almost-black);
@@ -225,7 +81,7 @@ table {
   width: 62%;
 }
 
-.access__input-wraper {
+.access__input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -284,46 +140,30 @@ table {
   gap: 40px;
 }
 
+.header__dots {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
 @media (max-width: 1339px) {
   .contents-wrapper {
-    position: relative;
-    padding: 0 0 257px 39px;
-  }
-
-  .header__images {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+    padding: 0 0 256px 38px;
   }
 
   .header__logo {
     transform: none;
     margin-top: 50px;
-    z-index: 3;
   }
 
   .image-wrapper {
-    width: 68%;
+    width: 64%;
   }
 
-  .header__image {
-    min-height: 72vh;
-  }
-
-  .header__dots {
-    left: 0;
-    bottom: 0;
-    transform: none;
-    z-index: 3;
-  }
-
-  .header__access-wraper {
-    left: auto;
-    bottom: 257px;
-    width: 86%;
-    max-width: 800px;
-    padding-top: 93px;
+  .header__access-wrapper {
+    width: 88%;
+    padding-top: 92px;
     padding-right: 0;
   }
 
@@ -332,31 +172,16 @@ table {
     line-height: 56px;
     margin-bottom: 31px;
   }
+
+  .header__dots {
+    bottom: -256px;
+    left: 0;
+    transform: none;
+  }
 }
 
 @media (max-width: 767px) {
-  .contents-wrapper {
-    position: relative;
-    padding: 0;
-    width: 100%;
-  }
-
-  .mobile-image {
-    display: block;
-    object-fit: cover;
-    object-position: top;
-    height: 100vh;
-    width: 100%;
-  }
-
-  .header__logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 62px;
-    z-index: 3;
-  }
-
+  /* not visible on mobile start */
   .image-wrapper {
     display: none;
   }
@@ -364,44 +189,75 @@ table {
   .header__dots {
     display: none;
   }
+  /* not visible on mobile end */
 
-  .header__access-wraper {
-    bottom: 0;
+  .contents-wrapper {
+    padding: 62px 24px 94px;
+    background-image: url("images/mobile-bitmap.png");
+    background-size: cover;
+  }
+
+  .header__contents {
+    align-items: center;
+    gap: 58px;
+    justify-content: flex-start;
+  }
+
+  .header__logo {
+    margin-top: 0;
+  }
+
+  .header__access-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: transparent;
-    width: auto;
-    height: 100%;
-    padding: 175px 24px 0;
-    z-index: 2;
+    width: 100%;
+    text-align: center;
+    padding-top: 0;
+    flex-grow: 1;
   }
 
   .access__title {
-    font-size: 26px;
-    line-height: 38px;
-    margin-bottom: 16px;
-    text-align: center;
+  font-size: 26px;
+  line-height: 38px;
   }
 
   .access__text {
+    width: 100%;
+    margin-bottom: 33px;
     font-size: 15px;
     line-height: 25px;
-    margin-bottom: 33px;
-    width: auto;
-    text-align: center;
   }
 
-  .access__icons {
-    gap: 24px;
-    justify-content: center;
-    margin-bottom: 48px;
+  .mobile-flipper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 48px;
+  align-items: center;
   }
 
-  .mobile-icon-wraper {
+  .access__input-wrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    /* flex-grow: 1; */
+  }
+
+  .access__email {
+    width: 100%;
+    height: 46px;
+  }
+
+  .access__button {
+    position: static;
+    width: 100%;
+    height: 46px;
+  }
+
+  .mobile-icon-wrapper {
     height: 17px;
     width: auto;
-    overflow: hidden;
     display: flex;
     align-items: center;
   }
@@ -410,29 +266,5 @@ table {
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-
-
-  .mobile-flipper {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .access__input-wraper {
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .access__email {
-    height: 46px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-  .access__button {
-    position: static;
-    width: 100%;
   }
 }
